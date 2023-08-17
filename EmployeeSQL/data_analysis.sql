@@ -9,7 +9,7 @@ ON e.emp_no = s.emp_no;
 -- List the first name, last name, and hire date for the employees who were hired in 1986
 SELECT e.first_name, e.last_name, e.hire_date
 FROM employees e
-WHERE e.hire_date BETWEEN '01/01/1986' AND '12/31/1986'
+WHERE e.hire_date BETWEEN '01/01/1986' AND '12/31/1986';
 
 -- List the manager of each department along with their department number, department name, 
 -- employee number, last name, and first name
@@ -18,7 +18,7 @@ FROM employees e
 JOIN dept_manager j
 ON e.emp_no = j.emp_no
 JOIN departments d
-ON d.dept_no = j.dept_no
+ON d.dept_no = j.dept_no;
 
 -- List the department number for each employee along with that employee’s employee number, last name, 
 -- first name, and department name
@@ -27,20 +27,39 @@ FROM employees e
 JOIN dept_emp j
 ON e.emp_no = j.emp_no
 JOIN departments d
-ON d.dept_no = j.dept_no
+ON d.dept_no = j.dept_no;
 
 -- List first name, last name, and sex of each employee whose first name is Hercules and whose 
 -- last name begins with the letter B
-
+SELECT e.first_name, e.last_name, e.sex
+FROM employees e
+WHERE e.first_name = 'Hercules' AND e.last_name LIKE 'B%';
 
 -- List each employee in the Sales department, including their employee number, last name, and 
 -- first name
-
+SELECT d.dept_name, e.emp_no, e.last_name, e.first_name
+FROM employees e
+JOIN dept_emp j
+ON e.emp_no = j.emp_no
+JOIN departments d
+ON d.dept_no = j.dept_no
+WHERE d.dept_name = 'Sales';
 
 -- List each employee in the Sales and Development departments, including their employee number, 
 -- last name, first name, and department name
-
+SELECT d.dept_name, e.emp_no, e.last_name, e.first_name
+FROM employees e
+JOIN dept_emp j
+ON e.emp_no = j.emp_no
+JOIN departments d
+ON d.dept_no = j.dept_no
+WHERE d.dept_name IN ('Sales', 'Development');
 
 -- List the frequency counts, in descending order, of all the employee last names (that is, 
 -- how many employees share each last name)
+SELECT e.last_name, COUNT(e.last_name) AS "last_name_count"
+FROM employees e
+GROUP BY e.last_name
+ORDER BY "last_name_count" DESC;
+
 
