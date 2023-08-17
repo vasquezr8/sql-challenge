@@ -1,18 +1,33 @@
 -- Select statements
 
 -- List the employee number, last name, first name, sex, and salary of each employee
-
+SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
+FROM employees e
+JOIN salaries s
+ON e.emp_no = s.emp_no;
 
 -- List the first name, last name, and hire date for the employees who were hired in 1986
-
+SELECT e.first_name, e.last_name, e.hire_date
+FROM employees e
+WHERE e.hire_date BETWEEN '01/01/1986' AND '12/31/1986'
 
 -- List the manager of each department along with their department number, department name, 
 -- employee number, last name, and first name
-
+SELECT d.dept_no, d.dept_name, e.emp_no, e.last_name, e.first_name
+FROM employees e
+JOIN dept_manager j
+ON e.emp_no = j.emp_no
+JOIN departments d
+ON d.dept_no = j.dept_no
 
 -- List the department number for each employee along with that employee’s employee number, last name, 
 -- first name, and department name
-
+SELECT d.dept_no, e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM employees e
+JOIN dept_emp j
+ON e.emp_no = j.emp_no
+JOIN departments d
+ON d.dept_no = j.dept_no
 
 -- List first name, last name, and sex of each employee whose first name is Hercules and whose 
 -- last name begins with the letter B
