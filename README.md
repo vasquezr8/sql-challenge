@@ -6,19 +6,17 @@ Welcome to my Pewlett Hackard Employee Data Analysis project! In this endeavor, 
 
 As a new data engineer at Pewlett Hackard, my primary task was to analyze the company's employee data. The project entails data modeling, data engineering, and data analysis, with a focus on understanding the demographics and trends of employees from the past.
 
-### Data Modeling
+## Data Modeling
 
-- I inspected the CSV files provided and sketched an Entity Relationship Diagram (ERD) to visualize the database structure. This ERD can be found in the EmployeeSQL/data_modeling.png file
+I inspected the CSV files provided and sketched an Entity Relationship Diagram (ERD) to visualize the database structure. This ERD can be found in the EmployeeSQL/data_modeling.png file.
 
-### Data Engineering
+## Data Engineering
 
-- I created table schemas for each CSV file, specifying data types, primary keys, foreign keys, and other constraints.
-- I imported the data from the CSV files into SQL tables, maintaining data integrity.
-- The table schemas can be found in the EmployeeSQL/data_engineering.sql file
+I created table schemas for each CSV file, specifying data types, primary keys, foreign keys, and other constraints. I imported the data from the CSV files into SQL tables, maintaining data integrity. The table schemas can be found in the EmployeeSQL/data_engineering.sql file.
 
-### Data Analysis
+## Data Analysis
 
-- I had to answer questions about the data using a variety of different statements and queries, which can be found in the EmployeeSQL/data_analysis.sql file. These are the questions that I answered:
+I had to answer questions about the data using a variety of different statements and queries, which can be found in the EmployeeSQL/data_analysis.sql file. These are the questions that I answered:
 
 1. List the employee number, last name, first name, sex, and salary of each employee.
 2. List the first name, last name, and hire date for the employees hired in 1986.
