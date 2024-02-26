@@ -26,7 +26,3 @@ I had to answer questions about the data using a variety of different statements
 6. List each employee in the Sales department, including their employee number, last name, and first name.
 7. List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 8. List the frequency counts, in descending order, of all the employee last names.
-
-## Contributors
-
-- Ryan Vasquez
